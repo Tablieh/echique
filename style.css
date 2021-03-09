@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+#chess{
+    display: flex;
+    flex-wrap: wrap;
+    width: 804px;
+    margin: auto;
+    border: 1px solid #ccc;
+    
+}
+.case{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+}
+.case.caseNoire{
+    background-color: rgb(129, 127, 127);
+}
+.echique{
+    width: 100px;
+    height: 100px;
+}
+.case p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: 1em;
+    width: 80px;
+    height: 80px;
+    border: none;
+}
+.caseNoire p{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-size: 1em;
+    width: 80px;
+    height: 80px;
+    border: none;
+}

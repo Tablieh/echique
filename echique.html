@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>echique</title>
+</head>
+<body>
+    
+    <div id="chess"></div>
+    
+    <script>
+        let line = 1
+        
+        let tab=["tour NOIR","cavalier NOIR","fou NOIR","reine NOIR","roi NOIR","fou NOIR","cavalier NOIR","tour NOIR","pion NOIR", "pion NOIR", "pion NOIR", "pion NOIR", "pion NOIR", "pion NOIR" , "pion NOIR", "pion NOIR"]
+        let tab2=["tour blanc","cavalier blanc","fou blanc","reine blanc","roi blanc","fou blanc","cavalier blanc","tour blanc","pion blanc", "pion blanc", "pion blanc", "pion blanc", "pion blanc", "pion blanc", "pion blanc", "pion blanc"]
+        for (let i = 1; i <= 64; i++) {
+                                                            //make a case div with class 
+            let cell = document.createElement("div")
+            cell.classList.add("case")
+           
+            
+            //every 2 case add case black
+            //And the !== cus i want to start with a wihte case same thing in if 2!=0 int 3em if 
+            if(line % 2 !=0 ){ 
+                if(i % 2 == 0){ //if pair
+                cell.classList.add("caseNoire")
+                }
+            }
+            else{ //if impair
+                if(i % 2!== 0){ 
+                cell.classList.add("caseNoire")
+            
+            }
+           
+            }
+                                                                    //add inside chess a cell
+            document.querySelector("div#chess").appendChild(cell)
+                                                                    // give the console of the case line of line
+            console.log("case "+i+" -ligne"+line)
+                                                                    //if we are on 8 case of cell we passe 1 line
+            if( i % 8 == 0){
+                line++
+            }      
+           
+        }
+        function setAnId(){
+                let cells = document.getElementsByClassName("case")
+                for (let i = 0; i < cells.length; i++) {
+                    let iD = "cell_"+[i+1]
+                    let cell = cells[i]
+                    cell.id = iD
+                    if(i<16 || i > 47){
+                        cell.innerHTML = "<img src='img/"+pieces[iD]+".svg'>"
+                    }
+                }
+            }
+        let pieces = {//des pieces en fonction
+            cell_1 : "rook_b",
+            cell_2 : "knight_b",
+            cell_3 : "bishop_b",
+            cell_4 : "queen_b",
+            cell_5 : "king_b",
+            cell_6 : "bishop_b",
+            cell_7 : "knight_b",
+            cell_8 : "rook_b",
+            cell_9 : "pawn_b",
+            cell_10 : "pawn_b",
+            cell_11 : "pawn_b",
+            cell_12 : "pawn_b",
+            cell_13 : "pawn_b",
+            cell_14 : "pawn_b",
+            cell_15 : "pawn_b",
+            cell_16 : "pawn_b",
+            cell_49 : "pawn_w",
+            cell_50 : "pawn_w",
+            cell_51 : "pawn_w",
+            cell_52 : "pawn_w",
+            cell_53 : "pawn_w",
+            cell_54 : "pawn_w",
+            cell_55 : "pawn_w",
+            cell_56 : "pawn_w",
+            cell_57 : "rook_w",
+            cell_58 : "knight_w",
+            cell_59 : "bishop_w",
+            cell_60 : "king_w",
+            cell_61 : "queen_w",
+            cell_62 : "bishop_w",
+            cell_63 : "knight_w",
+            cell_64 : "rook_w",
+        }
+        setAnId()
+       
+    </script>
+</body>
+</html>
